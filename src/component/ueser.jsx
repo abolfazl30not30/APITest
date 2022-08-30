@@ -12,8 +12,10 @@ class Users extends Component {
     }
 
     async componentDidMount(){
-        const response = await axios.get('https://reqres.in/api/users');
-        this.setState({users : response.data.data, isLoading : false})
+        const response = await fetch('http://localhost:8086/api/').then((response) => response.json())
+        .then((data) => console.log(data));
+        //this.setState({users : response.data.data, isLoading : false})
+        console.log(response)
     }
     render() { 
         return (
